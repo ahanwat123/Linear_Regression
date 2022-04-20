@@ -48,3 +48,4 @@ class ApiHeaderModel {
       .get(Uri.parse('${UserDetail.currentUrl}api/IFXCompanyList?UID=' + uid),
             headers: headerModel.toJson())
             --------------------------------------------------------------------------
+bearer CgS9tKcyPvlnekCSMO6w7303kXC5nc0dP84XFCPanjIYTOQ84zLVoa8QSZtt0PLZ88hSRRSZ20zoqnDDIb8LkyX5EJuvg0cwQoKOG-aBP3A-exmw7tlUEiO68LdcTIEyV8mfDOb-UyuKQZld0Au0sccEqfYjP_zzFVZhKJWpLDQuWuAUIbpj0S2qbzkSvw3dYTFq6fWoDqk1zhlNZij269NJ8rE8T0Qiat9tM_YJEM_EJo-8Tol5GnBRsogIc1Cq
