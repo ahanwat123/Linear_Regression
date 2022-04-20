@@ -1,0 +1,31 @@
+class CompanyModel {
+  String? clientName;
+  String? guid;
+  String? companyGUID;
+  String? logoURL;
+  CompanyModel(
+      {String? clientName,
+      String? guid,
+      String? companyGUID,
+      String? logoURL}) {
+    clientName = clientName;
+    guid = guid;
+    companyGUID = companyGUID;
+    logoURL = logoURL;
+  }
+
+  CompanyModel.fromJson(dynamic json) {
+    clientName = json['clientName'];
+    guid = json['guid'];
+    companyGUID = json['companyGUID'];
+    logoURL = json['logoURL'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final map = <String, dynamic>{};
+    map['clientName'] = this.clientName;
+    map['guid'] = this.guid;
+    map['companyGUID'] = this.companyGUID;
+    map['logoURL'] = this.logoURL;
+    return map;
+  }
