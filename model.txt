@@ -29,3 +29,22 @@ class CompanyModel {
     map['logoURL'] = this.logoURL;
     return map;
   }
+------------------------------------------------------------------------------
+class ApiHeaderModel {
+  String? authorization;
+  String? contentType;
+  ApiHeaderModel({this.authorization, this.contentType});
+
+  Map<String, String>? toJson() => {
+        "Authorization": authorization!,
+        "Content-Type": contentType!,
+      };
+}
+-----------------------------------------------------------------------------------
+ ApiHeaderModel headerModel = new ApiHeaderModel(
+      authorization: UserDetail.token!.tokenType! + " " + accessToken,
+      contentType: 'application/json; charset=UTF-8');
+      -------------------------------------------------------------
+      .get(Uri.parse('${UserDetail.currentUrl}api/IFXCompanyList?UID=' + uid),
+            headers: headerModel.toJson())
+            --------------------------------------------------------------------------
