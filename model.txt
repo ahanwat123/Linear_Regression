@@ -1,89 +1,26 @@
-class CompanyModel {
-  String? clientName;
-  String? guid;
-  String? companyGUID;
-  String? logoURL;
-  CompanyModel(
-      {String? clientName,
-      String? guid,
-      String? companyGUID,
-      String? logoURL}) {
-    clientName = clientName;
-    guid = guid;
-    companyGUID = companyGUID;
-    logoURL = logoURL;
-  }
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-  CompanyModel.fromJson(dynamic json) {
-    clientName = json['clientName'];
-    guid = json['guid'];
-    companyGUID = json['companyGUID'];
-    logoURL = json['logoURL'];
-  }
+import 'package:flutter/material.dart';
 
-  Map<String, dynamic> toJson() {
-    final map = <String, dynamic>{};
-    map['clientName'] = this.clientName;
-    map['guid'] = this.guid;
-    map['companyGUID'] = this.companyGUID;
-    map['logoURL'] = this.logoURL;
-    return map;
-  }
-------------------------------------------------------------------------------
-class ApiHeaderModel {
-  String? authorization;
-  String? contentType;
-  ApiHeaderModel({this.authorization, this.contentType});
+final kHintTextStyle = TextStyle(
+  color: Colors.white54,
+  fontFamily: 'OpenSans',
+);
 
-  Map<String, String>? toJson() => {
-        "Authorization": authorization!,
-        "Content-Type": contentType!,
-      };
-}
------------------------------------------------------------------------------------
- ApiHeaderModel headerModel = new ApiHeaderModel(
-      authorization: UserDetail.token!.tokenType! + " " + accessToken,
-      contentType: 'application/json; charset=UTF-8');
-      -------------------------------------------------------------
-      .get(Uri.parse('${UserDetail.currentUrl}api/IFXCompanyList?UID=' + uid),
-            headers: headerModel.toJson())
-            --------------------------------------------------------------------------
-bearer CgS9tKcyPvlnekCSMO6w7303kXC5nc0dP84XFCPanjIYTOQ84zLVoa8QSZtt0PLZ88hSRRSZ20zoqnDDIb8LkyX5EJuvg0cwQoKOG-aBP3A-exmw7tlUEiO68LdcTIEyV8mfDOb-UyuKQZld0Au0sccEqfYjP_zzFVZhKJWpLDQuWuAUIbpj0S2qbzkSvw3dYTFq6fWoDqk1zhlNZij269NJ8rE8T0Qiat9tM_YJEM_EJo-8Tol5GnBRsogIc1Cq
-------------------------------------------------------------------------------------------------------------------------------------------------
-appBar: AppBar(
-        backgroundColor: Colors.pink,
-        title: !isSearching
-            ? Text('All Countries')
-            : TextField(
-                onChanged: (value) {
-                  _filterCountries(value);
-                },
-                style: TextStyle(color: Colors.white),
-                decoration: InputDecoration(
-                    icon: Icon(
-                      Icons.search,
-                      color: Colors.white,
-                    ),
-                    hintText: "Search Country Here",
-                    hintStyle: TextStyle(color: Colors.white)),
-              ),
-        actions: <Widget>[
-          isSearching
-              ? IconButton(
-                  icon: Icon(Icons.cancel),
-                  onPressed: () {
-                    setState(() {
-                      this.isSearching = false;
-                      filteredCountries = countries;
-                    });
-                  },
-                )
-              : IconButton(
-                  icon: Icon(Icons.search),
-                  onPressed: () {
-                    setState(() {
-                      this.isSearching = true;
-                    });
-                  },
-                )
-        ],
+final kLabelStyle = TextStyle(
+  color: Colors.white,
+  fontWeight: FontWeight.bold,
+  fontFamily: 'OpenSans',
+);
+
+final kBoxDecorationStyle = BoxDecoration(
+  color: Color(0xFF6CA8F1),
+  borderRadius: BorderRadius.circular(10.0),
+  boxShadow: [
+    BoxShadow(
+      color: Colors.black12,
+      blurRadius: 6.0,
+      offset: Offset(0, 2),
+    ),
+  ],
+);
